@@ -30,6 +30,7 @@ public class SeleniumJavaPymentPageTest extends Basepage {
 
 	@BeforeMethod
 	public void setup() throws IOException, InterruptedException {
+		test = reports.createTest("Validating the Paymnet page");
 		// base page
 		driver = initializationAndOpenApplication(prop.getProperty("browser"));
 		Thread.sleep(2000);

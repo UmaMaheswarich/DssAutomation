@@ -17,7 +17,7 @@ public class LaunchingBrowserTest extends Basepage {
 
 	@Test
 	public void validateOpenApplication() {
-
+		test = reports.createTest("Validating the OpenApplication");
 		driver = initializationAndOpenApplication(prop.getProperty("browser"));
 
 	}

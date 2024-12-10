@@ -47,7 +47,7 @@ public class Landingpage_using_pagefactory extends Basepage {
 		test.log(Status.INFO, "Clicking the submit button");
 
 		submit_btn.click();
-		return new HomePage(driver);
+		return new HomePage(driver,test);
 	}
 
 	public void loginwithInValidCredentials() throws InterruptedException {

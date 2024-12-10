@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.aventstack.extentreports.ExtentTest;
 import com.dss.qa.Base.Basepage;
 
 public class HomePage extends Basepage {
@@ -18,8 +19,9 @@ public class HomePage extends Basepage {
 	@FindBy(linkText = "Selenium Testing with Java")
 	WebElement selenium_java_course;
 
-	public HomePage(WebDriver driver) {
+	public HomePage(WebDriver driver,ExtentTest Test) {
 		this.driver = driver;
+		this.test =test;
 		PageFactory.initElements(driver, this);
 
 	}
@@ -40,7 +42,7 @@ public class HomePage extends Basepage {
 		//click diff. courses by using dynamic xpath
 		WebElement courses = driver.findElement(By.xpath("//li/a[contains(text(),'"+Course+"')]"));
 		courses.click();
-		return new RequiredCoursePage(driver);
+		return new RequiredCoursePage(driver,test);
 		
 	}
 
